@@ -1,0 +1,113 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--makes sure it is scaled to phone size as well-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OKIE TOKIE BAKERY</title>
+        <!--linking the css sheet-->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css')}}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+</head>
+<body>
+
+<!-- creting the navigation bar at the top-->
+<section class="header">
+    <nav>
+        <div class="nav-links" id="navLinks">
+            <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/previous orders">Previous</a></li>
+                    <li><a href="/login">Login</a></li>
+                </ul>
+        </div>
+        <i class="fas fa-bars" onclick="showMenu()"></i>
+    </nav>
+<div class="text-box">
+    <h1>Home</h1>
+    <p class="p1">welcome to the okie tokie bakery where idgf vodb  erogug vkf n er pfhruf av riughreg  vrh rgubprg wvpurg reg pev eiuvh wepr vuefvh preg pgbdfvubewrugb rg bpd vbv rgupgb dfpvpfdjbvtbgnwdkjn ergiwpogi rgihknfwer erjglkgrnbj erghpwerugh dufvpd fvn erf erp vds pergh dfiv irgh pg opg vd spgirg</p>
+</div>
+
+</section>
+    
+
+<!--bakery items-->
+<section class="Bakery">
+    <br>
+    <br>
+    <h2 style="font-size:30px; font-family: 'Montserrat', cursive;;">Our Bakery</h2>
+    <br>
+    <!--this part displays the link to the products-->
+    <div class="row">
+        <a href="cakes">
+            <div class="Bakery-col" style="float:left; padding-left: 5px;">
+                <img
+                src="https://rufflesandrainboots.s3.us-west-2.amazonaws.com/wp-content/uploads/2019/05/22194114/Bubblegum-Cupcakes-Recipe-S-720x720.jpg" style="padding: 10px; width: 300px; height: 600px; object-fit: cover">
+                <div class="layer">
+                    <h3>CAKES</h3>
+                </div>
+            </div>
+        </a>
+        <a href="brownies">
+            <div class="Bakery-col" style="float:left; padding-left: 5px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRWHlb_VUDfKtgLPGZOGGzYstIY6syf1MzuA&usqp=CAU" style="padding: 10px; width: 300px; height: 600px; object-fit: cover">
+                <div class="layer">
+                    <h3>BROWNIES</h3>
+                </div>
+            </div>
+        </a>
+        <a href="cookies">
+            <div class="Bakery-col" style="float:left; padding-left: 5px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzVVRMPhEKlmemLyxJ-qObeIl5kGxcMQIfXw&usqp=CAU" style="padding: 10px; width: 300px; height: 600px; object-fit: cover">
+                <div class="layer">
+                    <h3>COOKIES</h3>
+                </div>
+            </div>
+        </a>
+    </div>
+
+</section>
+
+<br>
+
+<!--Reviews-->
+
+<section class="reviews">
+    <h4>Customer reviews</h4>
+    <br>
+    <div class="row">
+        <div class="review-col">
+            <div>
+                <h5>Name1 SName1</h5>
+                <p>hfuidh urh wiuf  qerufo eru r grugb  rgoqegr  eurfg er regu qygr er efuh qerfhu  ggubberroqg erg qeg dfb g ryr   y eorgf frheorhgruh g</p>
+            </div>
+        </div>
+        <div class="review-col">
+            <div>
+                <h5>Name2 SName2</h5>
+                <p>hfuidh urh wiuf  qerufo eru r grugb  rgoqegr  eurfg er regu qygr er efuh qerfhu  ggubberroqg erg qeg dfb g ryr   y eorgf frheorhgruh g</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--JS to edit the menu-->
+<script>
+    var navLinks = document.getElementById("navLinks")
+    function openMenu(){
+        navLinks.style.right = "0"
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200";
+    }
+</script>
+
+</body>
+</html>
+
+{% endblock content %}

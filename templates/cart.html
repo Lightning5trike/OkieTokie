@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--makes sure it is scaled to phone size as well-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OKIE TOKIE BAKERY</title>
+        <!--linking the css sheet-->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/logsign.css')}}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+ </head>
+ <body>
+  
+  
+ <!-- creting the navigation bar at the top-->
+ <section class="header">
+    <nav>
+        <nav>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/previous orders">Previous</a></li>
+                        <li><a href="/login">Login</a></li>
+                    </ul>
+            </div>
+            <i class="fas fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <i class="fas fa-bars" onclick="showMenu()"></i>
+    </nav>
+  
+  
+    <div class="container">
+        <div class="row">
+                {% for order in orders %}
+                <div class="card col-4" style="width: 20rem;">
+
+                    <h1 class="card-title">{{ order['cake_size'] }}</h1>
+                    <h1 class="card-title">{{ order['layers'] }}</h1>
+                    <h1 class="card-title">{{ order['extras'] }}</h1>
+                    <h1 class="card-title">{{ order['extra_info'] }}</h1>
+                    <h1 class="card-title">{{ order['collection_date'] }}</h1>
+                    <h1 class="card-title">{{ order['products_productName'] }}</h1>
+                    <h1 class="card-title">{{ order['quantity'] }}</h1>
+                
+                </div>
+                {% endfor %}
+        </div>
+    </div>

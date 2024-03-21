@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <title>Sign Up Page</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename= 'css/logsign.css')}}">
+   <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+
+ </head>
+ <body>
+  <div class="signuptable">
+    <h3 class="title">Sign-up</h3>
+    <div class="box">
+        <form method="POST" action="/signup">
+
+            <tr class = signuptable>
+              <td>{{form.email.label}}</td>
+              <td>{{form.email}}</td>
+            </tr>
+            
+            <br>
+            <tr class="signuptable">
+              <td>{{form.customer_password.label}}</td>
+              <td>{{form.customer_password}}</td>
+            </tr>
+        
+            <br>
+            <tr class="signuptable">
+                <td>{{form.submit(class="anchor-button")}}</td>
+            </tr>
+          </table>
+
+ </body>
+</html>
+

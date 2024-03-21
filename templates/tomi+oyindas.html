@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--makes sure it is scaled to phone size as well-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OKIE TOKIE BAKERY</title>
+        <!--linking the css sheet-->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/logsign.css')}}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+ </head>
+ <body>
+  
+  
+ <!-- creting the navigation bar at the top-->
+ <section class="header">
+    <nav>
+        <div class="nav-links" id="navLinks">
+            <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/cart">Cart</a></li>
+                    <li><a href="/okietokie/create">Create</a></li>
+                    <li><a href="/okietokie/products">Products</a></li>
+                </ul>
+        </div>
+        <i class="fas fa-bars" onclick="showMenu()"></i>
+    </nav>
+  
+  
+    <div class="container">
+        <div class="row">
+                {% for order in orders %}
+                <div>
+                    
+                    <h2 class="card-title" style="font-size: 22px; font-family: 'Montserrat', Arial, Helvetica, sans-serif; padding-left: 100px; margin-top: 50px; padding: 0px;">email: {{ order['users_email'] }}</h2>
+                    <h2 class="card-title" style="font-size: 22px; font-family: 'Montserrat', Arial, Helvetica, sans-serif; padding-left: 100px; margin-top: 0px; padding: 0px;">cake size: {{ order['cake_size'] }}</h2>
+                    <h2 class="card-title" style="font-size: 22px; font-family: 'Montserrat', Arial, Helvetica, sans-serif; padding-left: 100px; margin-top: 0px; padding: 0px;">layers: {{ order['layers'] }}</h2>
+                    <h2 class="card-title" style="font-size: 22px; font-family: 'Montserrat', Arial, Helvetica, sans-serif; padding-left: 100px; margin-top: 0px; padding: 0px;">extras: {{ order['extras'] }}</h2>
+                    <h2 class="card-title" style="font-size: 22px; font-family: 'Montserrat', Arial, Helvetica, sans-serif; padding-left: 100px; margin-top: 0px; padding: 0px;">extra info: {{ order['extra_info'] }}</h2>
+                    <h2 class="card-title" style="font-size: 22px; font-family: 'Montserrat', Arial, Helvetica, sans-serif; padding-left: 100px; margin-top: 0px; padding: 0px;">collection date: {{ order['collection_date'] }}</h2>
+                    <h2 class="card-title" style="font-size: 22px; font-family: 'Montserrat', Arial, Helvetica, sans-serif; padding-left: 100px; margin-top: 0px; padding: 0px;">product: {{ order['products_productName'] }}</h2>
+                    <h2 class="card-title" style="font-size: 22px; font-family: 'Montserrat', Arial, Helvetica, sans-serif; padding-left: 100px; margin-top: 0px; padding: 0px;">quantity: {{ order['quantity'] }}</h2>
+                    <br>
+                    <hr> 
+                </div>
+                {% endfor %}
+        </div>
+    </div>
+ 

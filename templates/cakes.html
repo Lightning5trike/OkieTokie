@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--makes sure it is scaled to phone size as well-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OKIE TOKIE BAKERY</title>
+        <!--linking the css sheet-->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/logsign.css')}}">  
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+ </head>
+ <body>
+  <!-- creting the navigation bar at the top-->
+ <section class="header">
+    <nav>
+        <div class="nav-links" id="navLinks">
+            <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/cart">Cart</a></li>
+                    <li><a href="/login">Login</a></li>
+                </ul>
+        </div>
+        <i class="fas fa-bars" onclick="showMenu()"></i>
+    </nav>
+</section>
+
+<section class="Bakery">
+    <div class="row">
+        <a href="cakes/cupcakes">
+            <div class="Bakery-col">
+                <img
+                src="https://rufflesandrainboots.s3.us-west-2.amazonaws.com/wp-content/uploads/2019/05/22194114/Bubblegum-Cupcakes-Recipe-S-720x720.jpg">
+                <div class="layer">
+                    <h3>CUPCAKES</h3>
+                </div>
+            </div>
+        </a>
+        <a href="cakes/custom">
+            <div class="Bakery-col">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-hNSU29GhvQGzgKFzgI0A4WdBf8yN4EVQLA&usqp=CAU">
+                <div class="layer">
+                    <h3>CUSTOM CAKES</h3>
+                </div>
+            </div>
+        </a>
+    </div>>
+</section>  
+
+
+  <footer>
+    <a href="https://www.instagram.com/okie_tokie_cakes/?hl=en">Instagram: @okie_tokie_cakes</a>
+  
+ </footer>
+ 
+ 
+ 

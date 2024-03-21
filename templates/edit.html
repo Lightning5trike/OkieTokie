@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--makes sure it is scaled to phone size as well-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OKIE TOKIE BAKERY</title>
+        <!--linking the css sheet-->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/logsign.css')}}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+ </head>
+ <body>
+  
+  
+ <!-- creting the navigation bar at the top-->
+ <section class="header">
+    <nav>
+        <div class="nav-links" id="navLinks">
+            <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/cart">Cart</a></li>
+                    <li><a href="/okietokie/create">Create</a></li>
+                    <li><a href="/okietokie/products">Products</a></li>
+                </ul>
+        </div>
+        <i class="fas fa-bars" onclick="showMenu()"></i>
+    </nav>
+  
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+    <form method="POST">
+        <div class="form-group">
+            <label for="productName">Product Name: </label>
+            <input type="text" name="productName" placeholder="product name"
+                   class="form-control"
+                   value="{{ products['productName'] }}" style="height:25px; width:300px">
+            </input>
+        </div>
+        <div class="form-group">
+            <label for="product section">Product Section: </label>
+            <input type="text" name="product_section" placeholder="Product section"
+                   class="form-control"
+                   value="{{ products['product_section'] }}" style="height:25px; width:300px">
+            </input>
+        </div>
+        <div class="form-group">
+            <label for="product image">Product URL: </label>
+            <input type="text" name="product_image" placeholder="URL"
+                   class="form-control"
+                   value="{{ products['product_image'] }}" style="height:25px; width:300px">
+            </input>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" style="height:25px; width:75px">Submit</button>
+        </div>
+    </form>
+        <div class="form-group">
+    <form action="{{ url_for('delete', id=products['id']) }}" method="POST">
+            <input type="submit" value="Delete"
+                    class="btn btn-danger btn-sm"
+                    onclick="return confirm('Are you sure you want to delete this product?')" style="height:25px; width:75px">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--makes sure it is scaled to phone size as well-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>OKIE TOKIE BAKERY</title>
+      <!--linking the css sheet-->
+      <link rel="stylesheet" href="{{ url_for('static', filename= 'css/logsign.css')}}">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+
+</head>
+<body>
+<!-- creting the navigation bar at the top-->
+<section class="header">
+  <nav>
+      <div class="nav-links" id="navLinks">
+          <i class="fas fa-times" onclick="hideMenu()"></i>
+              <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/cart">Cart</a></li>
+                  <li><a href="/login">Login</a></li>
+              </ul>
+      </div>
+      <i class="fas fa-bars" onclick="showMenu()"></i>
+  </nav>
+  <div>
+      <div class="row">
+              {% for products in products %}
+          <div class="card-body" style="float:left; padding-left: 50px;" >
+              <h3 class="product names" style="font-size: 22px; font-family: 'Great Vibes', cursive; padding-left: 100px; margin-top: 50px; padding: 10px;">{{ products['productName'] }}</h3>
+              <br>
+              <img src="{{ products['product_image'] }}" class="prod-size" style="padding: 10px; width: 300px; height: 200px; object-fit: cover">
+          </div>
+      </div>
+              {% endfor %}
+      </div>
+  </div>
+
+
+  <br>
+
+  <form method="POST" action="/cookies">
+
+      <table class="producttable">
+        <tr>
+          <td>{{form.users_email.label}}</td>
+          <td>{{form.users_email}}</td>
+        </tr>
+        <tr>
+        <tr>
+          <td>{{form.productName.label}}</td>
+          <td>{{form.productName}}</td>
+        </tr>
+        <tr>
+          <td>{{form.quantity.label}}</td>
+          <td>{{form.quantity}}</td>
+        </tr>
+        <tr>
+          <td>{{form.extra_info.label}}</td>
+          <td>{{form.extra_info}}</td>
+        </tr>
+        <tr>
+          <td>{{form.collection_date.label}}</td>
+          <td>{{form.collection_date}}</td>
+        </tr>
+        <tr class ="submit">
+          <td>{{form.submit(class="anchor-button")}}</td>
+        </tr>
+      </table>
+
+
+
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    
+      <footer class = "footer">
+        <a href="https://www.instagram.com/okie_tokie_cakes/?hl=en"> Instagram: @okie_tokie_cakes</a>
+       </footer>

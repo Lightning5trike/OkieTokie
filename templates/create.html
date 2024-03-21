@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <title>Sign Up Page</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename= 'css/logsign.css')}}">
+   <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+
+ </head>
+
+ 
+ <body>
+
+  <section class="header">
+    <nav>
+        <div class="nav-links" id="navLinks">
+            <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/okietokie/create">Create</a></li>
+                    <li><a href="/okietokie/products">Products</a></li>
+                </ul>
+        </div>
+        <i class="fas fa-bars" onclick="showMenu()"></i>
+    </nav>
+  
+  
+
+  <div class="createtable">
+    <h3 style="font-size:30px">Create</h3>
+    <div class="box">
+        <form method="POST" action="/okietokie/create">
+
+          <table>
+            <tr>
+                <td>{{form.productName.label}}</td>
+                <td>{{form.productName}}</td>
+            </tr>
+            <tr>
+                <td>{{form.product_section.label}}</td>
+                <td>{{form.product_section}}</td>
+            </tr>
+            <tr>
+                <td>{{form.product_image.label}}</td>
+                <td>{{form.product_image}}</td>
+            </tr>
+            <tr>
+                <td>{{form.submit(class="anchor-button")}}</td>
+            </tr>
+          </table>
+
+ </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <title>Cake Form</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename= 'css/logsign.css')}}">   
+   <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+
+ </head>
+ <body>
+
+  <section class="header">
+    <nav>
+        <div class="nav-links" id="navLinks">
+            <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/previous orders">Previous</a></li>
+                    <li><a href="/login">Login</a></li>
+                </ul>
+        </div>
+        <i class="fas fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+
+
+</section>
+  <div class="caketable">
+    <h3 class="customtitle" style="font-size:30px">Custom Cakes</h3>
+    <div class="box">
+        <form method="POST" action="/cakes/custom">
+
+          <table class="caketable">
+            <tr>
+              <td>{{form.users_email.label}}</td>
+              <td>{{form.users_email}}</td>
+            </tr>
+            <tr>
+            <tr>
+              <td>starting at £40 at 4" £5 per extra inch</td>>
+            </tr>
+            <tr>
+              <td>{{form.cake_size.label}}</td>
+             <td>{{form.cake_size}}</td>
+            </tr>
+            <tr>
+              <td>£5 per layer</td>>
+            </tr>
+            <tr>
+              <td>{{form.layers.label}}</td>
+             <td>{{form.layers}}</td>
+            </tr>
+            <tr>
+            <tr>
+              <td>{{form.extras.label}}</td>
+              <td>{{form.extras}}</td>
+            </tr>
+            <tr>
+            <tr>
+              <td>{{form.extra_info.label}}</td>
+             <td>{{form.extra_info}}</td>
+            </tr>
+            <tr>
+              <td>{{form.collection_date.label}}</td>
+             <td>{{form.collection_date}}</td>
+            </tr>
+            <tr>
+            <tr>
+                <td>{{form.submit(class="anchor-button")}}</td>
+            </tr>
+          </table>
+
+ </body>
+</html>
+
